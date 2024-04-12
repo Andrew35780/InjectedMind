@@ -1,0 +1,4 @@
+repository "InjectedMind@Andrewp53@cloud"
+  path "/"
+    br "/main"
+    co "/main"
