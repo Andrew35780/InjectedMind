@@ -10,10 +10,10 @@ public class LookAtMouse : MonoBehaviour
     {
         Vector3 WorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        Vector3 Difference = WorldPoint - transform.position;
+        //Vector3 Difference = (WorldPoint - transform.position).normalized;
 
 
-        fieldOfView.SetAimDirection(Difference);
+        fieldOfView.SetAimDirection(WorldPoint.normalized);
         fieldOfView.SetOrigin(transform.position);
     }
 }

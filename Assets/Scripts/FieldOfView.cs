@@ -8,21 +8,23 @@ public class FieldOfView : MonoBehaviour // Можно взять обработчик прицеливания 
     private Vector3 origin;
     private float startingAngle;
     private float fov;
+    [SerializeField] private GameObject player;
 
     private void Start()
     {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
+        GetComponent<MeshRenderer>().sortingOrder = 1;
         fov = 90f;
-        origin = Vector3.zero;
+        origin = player.transform.position;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         int rayCount = 50;
         float angle = startingAngle;
         float angleIncrease = fov / rayCount;
-        float viewDistance = 50f;
+        float viewDistance = 5f;
 
         Vector3[] vertices = new Vector3[rayCount + 1 + 1]; // 8 -8 max
         Vector2[] uv = new Vector2[vertices.Length];
