@@ -1,34 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundSwticher : MonoBehaviour
 {
-    [SerializeField] private AudioClip _lightSound;
+    [SerializeField] private AudioClip _farSound;
     [SerializeField] private AudioClip _mediumSound;
-    [SerializeField] private AudioClip _hardSound;
+    [SerializeField] private AudioClip _closeSound;
 
-    private GameObject _player;
-    private GameObject _enemy;
+    [SerializeField] private float _distanceToStartFarSound = 10f;
+    [SerializeField] private float _distanceToStartMediumSound = 6f;
+    [SerializeField] private float _distanceToStartCloseSound = 3f;
+
+    private AudioSource audioSource;
+        
+    private Transform _player;
+    private Transform _enemy;
 
 
     private void Start()
     {
-        _player = FindObjectOfType<PlayerMovement>().gameObject;
+        audioSource = GetComponent<AudioSource>();
+        _player = FindObjectOfType<PlayerMovement>().transform;
+        _enemy = FindObjectOfType<EnemyController>().transform;
     }
 
-    private void Update()
-    {
-        
-    }
-
-    private void FindNearestEnemy()
-    {
-
-    }
+    private void Update() => CheckDistanceToEnemy();
 
     private void CheckDistanceToEnemy()
     {
+        float distanceBwEnemyAndPlayer = Vector2.Distance(_player.transform.position, _enemy.transform.position);
 
+        if (distanceBwEnemyAndPlayer <= _distanceToStartFarSound && distanceBwEnemyAndPlayer > _distanceToStartMediumSound)
+            ChangeAndStartAudioClip(_farSound);
+        else if (distanceBwEnemyAndPlayer <= _distanceToStartMediumSound && distanceBwEnemyAndPlayer > _distanceToStartCloseSound)
+            ChangeAndStartAudioClip(_mediumSound);
+        else if (distanceBwEnemyAndPlayer <= _distanceToStartCloseSound)
+            ChangeAndStartAudioClip(_closeSound);
+        else if (distanceBwEnemyAndPlayer > _distanceToStartFarSound)
+            audioSource.Pause();
+        else
+            print($"Unespected distance: {distanceBwEnemyAndPlayer}");
+    }
+
+    private void ChangeAndStartAudioClip(AudioClip newClip)
+    {
+        audioSource.clip = newClip;
+        audioSource.Play();
     }
 }

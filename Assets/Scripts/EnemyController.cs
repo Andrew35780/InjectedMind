@@ -25,14 +25,13 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         CheckDistanceAndSetEnemyState();
+        print($"Distance to player = {Vector2.Distance(transform.position, player.position)}");
     }
 
     private void CheckDistanceAndSetEnemyState()
     {
         if (Vector2.Distance(transform.position, _originPoint.position) < _distanceOfPatrol && isAngry == false)
-        {
             isChill = true;
-        }
 
         if (Vector2.Distance(transform.position, player.position) < _stoppingDistance)
         {
@@ -47,38 +46,24 @@ public class EnemyController : MonoBehaviour
         }
 
         if (isChill)
-        {
             Chill();
-        }
         else if (isAngry)
-        {
             Angry();
-        }
         else if (isComeback)
-        {
             Comeback();
-        }
     }
 
     private void Chill()
     {
         if (transform.position.x > _originPoint.position.x + _distanceOfPatrol)
-        {
             isMovingRight = false;
-        }
         else if (transform.position.x < _originPoint.position.x - _distanceOfPatrol)
-        {
             isMovingRight = true;
-        }
 
         if (isMovingRight)
-        {
             transform.position = new Vector2(transform.position.x + _speed * Time.deltaTime, transform.position.y);
-        }
         else
-        {
             transform.position = new Vector2(transform.position.x - _speed * Time.deltaTime, transform.position.y);
-        }
     }
 
     private void Angry()

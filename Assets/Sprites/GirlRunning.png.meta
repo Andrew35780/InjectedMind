@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b091958829cbcc4e969bf8343b912ab
+guid: e414f87a548ab8f42941187a3dc79ddb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: GirlRunning_0
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 134
+        width: 513
+        height: 779
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79f7824fa2d14f549be02f3d06651d63
+      internalID: -363067964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlRunning_1
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 123
+        width: 515
+        height: 795
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8190609b13463cb4f959dd78abe4c165
+      internalID: 2112363736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlRunning_2
+      rect:
+        serializedVersion: 2
+        x: 2309
+        y: 124
+        width: 444
+        height: 791
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a4d67f3770fbd4eb94da83452bf0dd
+      internalID: -428936127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlRunning_3
+      rect:
+        serializedVersion: 2
+        x: 3326
+        y: 127
+        width: 378
+        height: 788
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 389c017c753446b49aeb561c14c4afbf
+      internalID: 948405380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlRunning_4
+      rect:
+        serializedVersion: 2
+        x: 4309
+        y: 125
+        width: 415
+        height: 790
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96fef85f3d5193742a5bd1fe4aeeae1d
+      internalID: -1800616104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +250,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GirlRunning_0: -363067964
+      GirlRunning_1: 2112363736
+      GirlRunning_2: -428936127
+      GirlRunning_3: 948405380
+      GirlRunning_4: -1800616104
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
